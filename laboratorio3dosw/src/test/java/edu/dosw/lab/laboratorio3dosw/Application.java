@@ -8,6 +8,7 @@ class Laboratorio3doswApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Funciona");
 	}
 
 }
