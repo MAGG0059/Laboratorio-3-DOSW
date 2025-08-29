@@ -5,7 +5,7 @@
 * número de cuenta tiene exactamente 10 dígitos 
 * el número de cuenta solo es válido si los primeros dos dígitos corresponden a un banco registrado. 
 * No tiene letras ni carácteres especiales.
-
+* El saldo del sueldo es positivo.
 ### Funcionalidades Principales
 * crear las cuentas de los clientes.
 * validar las cuentas de los clientes.
