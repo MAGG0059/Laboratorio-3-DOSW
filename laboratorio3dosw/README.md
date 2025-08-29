@@ -4,7 +4,7 @@
 ### Reglas de negocio
 * número de cuenta tiene exactamente 10 dígitos y
 solo es válido si los primeros dos dígitos
-corresponden a un banco registrado.No tiene letras
+corresponden a un banco registrado. No tiene letras
 ni carácteres especiales.
 
 ### Funcionalidades Principales
