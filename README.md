@@ -97,3 +97,7 @@ Durante la fase de análisis, este facilita la comprensión y documentación de 
 El valor mas complejo de implementar es el compromiso, ya que todo el equipo tiene que trabajar como uno, donde todos completen y agreguen tareas para el desarrollo, las cuales se deben realizar cumplidamente para evitar atrasos y solucionar errores desde un tiempo temprano.
 
 ---
+## Evidencia commits realizados
+![img.png](laboratorio3dosw/docs/imagenes/parte1_3.png)
+
+---
