@@ -21,3 +21,13 @@
 * Existencia de los bancos
 * Clientes registrados en alguno de los bancos
 * Fondos Monetarios
+
+### Reto 2
+![img.png](docs/uml/diagramaContexto.png)
+
+![img.jpeg](docs/imagenes/exel.png.jpeg)
+
+![img.jpeg](docs/uml/casos_de_uso.png.jpeg)
+
+
+![img.png](docs/uml/clasesreto2.png)
