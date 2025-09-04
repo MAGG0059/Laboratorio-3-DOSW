@@ -30,4 +30,4 @@
 ![img.jpeg](docs/uml/casos_de_uso.png.jpeg)
 
 
-![img.png](docs/uml/clasesreto2.png)
+![img.png](docs/uml/diagramaClases.png)
