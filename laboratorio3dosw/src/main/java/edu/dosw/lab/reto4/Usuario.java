@@ -18,7 +18,6 @@ public class Usuario {
         return numID;
     }
 
-    //falta consultarSaldoCuenta -k
 
 
 
