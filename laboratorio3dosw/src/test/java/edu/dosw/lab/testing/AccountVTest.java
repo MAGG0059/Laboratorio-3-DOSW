@@ -1,13 +1,13 @@
-package edu.dosw.lab;
+package edu.dosw.lab.testing;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import edu.dosw.lab.reto4.AccountManager;
-import edu.dosw.lab.reto4.AccountV;
-import edu.dosw.lab.reto4.Cuenta;
-import edu.dosw.lab.reto4.Usuario;
+import edu.dosw.lab.testing.reto4.AccountManager;
+import edu.dosw.lab.testing.reto4.AccountV;
+import edu.dosw.lab.testing.reto4.Cuenta;
+import edu.dosw.lab.testing.reto4.Usuario;
 
 public class AccountVTest {
 
