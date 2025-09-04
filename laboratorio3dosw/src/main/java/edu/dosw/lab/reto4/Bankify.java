@@ -5,7 +5,7 @@ public class Bankify{
         return new Cuenta(numID,nombre,saldo); // falta validación con clase accountV -k
     }
 
-    public void hacerTransferencia(Cuenta cuenta){
-            // error de diseño ???
+    public void hacerTransferencia(Cuenta cuentaOrigen, Cuenta cuentaDestino, double monto){
+            cuentaOrigen.transferir(monto);
     }
 }

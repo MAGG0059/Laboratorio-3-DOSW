@@ -6,11 +6,13 @@ public class Cuenta{
     private double saldo;
     private Usuario usuario;
 
-    public Cuenta(String numID, String nombre, double Saldo){
-        this.numeroCuenta = 0 ; //como sacamos el numero de cuenta?
-        this.saldo = Saldo;
-        this.usuario = new Usuario(numID, nombre); // como evitar q intente hacer un usuario nuevo cada vez?
+    public Cuenta(Usuario usuario, double Saldo){
 
+        // mum de cuenta 03
+        String numeroCuenta = "03" + String.format("%08d", (int)(Math.random() * 100000000));
+
+        this.saldo = Saldo;
+        this.usuario = usuario;
     }//-k
 
     public int getNumeroCuenta() {
@@ -21,5 +23,15 @@ public class Cuenta{
         return saldo;
     }
 
-   //faltaría un get relacionado a usuario ?? -k
+    public void transferir(double monto){
+        this.saldo -= monto;
+    }
+
+    public void recibirTransferencia(double monto){
+        this.saldo += monto;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
 }
