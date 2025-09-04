@@ -22,4 +22,15 @@ public class Cuenta {
     public void transferir(double monto) {
         this.saldo -= monto;
     }
+
+    public void depositar(double monto) {
+        if (monto > 0) {
+            this.saldo += monto;
+        }
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
 }

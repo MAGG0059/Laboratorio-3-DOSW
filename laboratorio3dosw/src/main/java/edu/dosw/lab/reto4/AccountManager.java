@@ -22,4 +22,24 @@ public class AccountManager {
         long numero = (long) (Math.random() * 1_000_000_0000L);
         return String.format("%010d", numero);
     }
+
+    public void depositar(String numeroCuenta, double monto) {
+        Cuenta cuenta = cuentas.get(numeroCuenta);
+        if (cuenta != null && monto > 0) {
+            cuenta.depositar(monto);
+        }
+    }
+
+    public double consultarSaldo(String numeroCuenta) {
+        Cuenta cuenta = cuentas.get(numeroCuenta);
+        return (cuenta != null) ? cuenta.getSaldo() : -1;
+    }
+
+    public Cuenta buscarCuentaPorUsuario(String idUsuario) {
+        return cuentas.values().stream()
+                .filter(c -> c.getUsuario().getNumID().equals(idUsuario))
+                .findFirst()
+                .orElse(null);
+    }
+
 }
