@@ -1,11 +1,19 @@
 package edu.dosw.lab.reto4;
 
-public class Bankify{
-    public static Cuenta crearCuenta(Usuario usuario, double saldo){
-        return new Cuenta(usuario,saldo); // falta validación con clase accountV -k
+public class Bankify {
+
+    private static AccountManager accountManager = new AccountManager();
+    private static AccountV accountValidator = new AccountV(accountManager);
+
+    public static Cuenta crearCuenta(Usuario usuario, double saldo) {
+        return accountManager.crearCuenta(usuario, saldo);
     }
 
-    public void hacerTransferencia(Cuenta cuentaOrigen, Cuenta cuentaDestino, double monto){
-            cuentaOrigen.transferir(monto);
+    public static boolean validarCuenta(String numeroCuenta) {
+        return accountValidator.validarCuenta(numeroCuenta);
+    }
+
+    public static Cuenta obtenerCuenta(String numeroCuenta) {
+        return accountManager.obtenerCuenta(numeroCuenta);
     }
 }

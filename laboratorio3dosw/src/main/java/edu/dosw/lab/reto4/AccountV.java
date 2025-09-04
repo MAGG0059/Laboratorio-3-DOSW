@@ -9,9 +9,15 @@ public class AccountV {
     }
 
     public boolean validarCuenta(String numeroCuenta) {
-        // Lógica para validar la cuenta
-        // Por ejemplo, verificar si el número de cuenta existe en el sistema
-        // Aquí se simula la validación con un número de cuenta fijo para el ejemplo
-        return numeroCuenta == "123456"; // Simulación: solo la cuenta 123456 es válida
+        Cuenta cuenta = accountManager.obtenerCuenta(numeroCuenta);
+
+        if (cuenta == null) {
+            return false;
+        }
+
+        boolean longitudValida = numeroCuenta.length() == 10;
+        boolean saldoValido = cuenta.getSaldo() >= 0;
+
+        return longitudValida && saldoValido;
     }
 }

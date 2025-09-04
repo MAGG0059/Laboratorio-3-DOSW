@@ -1,18 +1,15 @@
 package edu.dosw.lab.reto4;
 
-public class Cuenta{
-
+public class Cuenta {
     private String numeroCuenta;
     private double saldo;
     private Usuario usuario;
 
-    public Cuenta(Usuario usuario, double Saldo){
-
-        // mum de cuenta 03
-        String numeroCuenta = "03" + String.format("%08d", (int)(Math.random() * 100000000));
-        this.saldo = Saldo;
+    public Cuenta(Usuario usuario, double saldo, String numeroCuenta) {
         this.usuario = usuario;
-    }//-k
+        this.saldo = saldo;
+        this.numeroCuenta = numeroCuenta;
+    }
 
     public String getNumeroCuenta() {
         return numeroCuenta;
@@ -22,15 +19,7 @@ public class Cuenta{
         return saldo;
     }
 
-    public void transferir(double monto){
+    public void transferir(double monto) {
         this.saldo -= monto;
-    }
-
-    public void recibirTransferencia(double monto){
-        this.saldo += monto;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
     }
 }
