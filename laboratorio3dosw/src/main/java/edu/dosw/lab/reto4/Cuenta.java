@@ -2,7 +2,7 @@ package edu.dosw.lab.reto4;
 
 public class Cuenta{
 
-    private int numeroCuenta;
+    private String numeroCuenta;
     private double saldo;
     private Usuario usuario;
 
@@ -10,12 +10,11 @@ public class Cuenta{
 
         // mum de cuenta 03
         String numeroCuenta = "03" + String.format("%08d", (int)(Math.random() * 100000000));
-
         this.saldo = Saldo;
         this.usuario = usuario;
     }//-k
 
-    public int getNumeroCuenta() {
+    public String getNumeroCuenta() {
         return numeroCuenta;
     }
 
