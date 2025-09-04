@@ -9,4 +9,8 @@ public enum Banco {
     Banco(String codigo) {
         this.codigo = codigo;
     }
+
+    public String getCodigo() {
+        return this.codigo;
+    }
 }
