@@ -90,4 +90,42 @@ public class AccountVTest {
         assertNotNull(encontrada, "La cuenta debería encontrarse por el ID del usuario");
         assertEquals(cuenta.getNumeroCuenta(), encontrada.getNumeroCuenta(), "El número de cuenta debería coincidir");
     }
+
+    @Test
+    void testValidarCuentaCuentaNula() {
+        // Rama: cuenta == null → return false
+        boolean resultado = accountV.validarCuenta("9999999999"); // Cuenta que no existe
+        assertFalse(resultado);
+    }
+
+    @Test
+    void testValidarCuentaLongitudInvalida() {
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = accountManager.crearCuenta(usuario, 1000.0);
+
+        String numeroCorto = cuenta.getNumeroCuenta().substring(0, 5);
+        boolean resultado = accountV.validarCuenta(numeroCorto);
+        assertFalse(resultado);
+    }
+
+    @Test
+    void testValidarCuentaSaldoNegativo() {
+
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = accountManager.crearCuenta(usuario, -100.0); // Saldo negativo
+
+        boolean resultado = accountV.validarCuenta(cuenta.getNumeroCuenta());
+        assertFalse(resultado);
+    }
+
+    @Test
+    void testValidarCuentaTodasCondicionesValidas() {
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = accountManager.crearCuenta(usuario, 1000.0);
+
+        boolean resultado = accountV.validarCuenta(cuenta.getNumeroCuenta());
+        assertTrue(resultado);
+    }
+
+
 }

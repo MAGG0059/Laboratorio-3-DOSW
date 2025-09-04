@@ -55,4 +55,36 @@ public class AccountManagerTest {
         assertEquals(10, cuenta1.length(), "El número de cuenta debería tener 10 dígitos");
         assertEquals(10, cuenta2.length(), "El número de cuenta debería tener 10 dígitos");
     }
+
+
+
+    // tsts cuenta directamente (?)
+    @Test
+    void testCuentaDepositarMontoCero() {
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = new Cuenta(usuario, 1000.0, "1234567890");
+
+        cuenta.depositar(0.0);
+        assertEquals(1000.0, cuenta.getSaldo());
+    }
+
+    @Test
+    void testCuentaDepositarMontoNegativo() {
+
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = new Cuenta(usuario, 1000.0, "1234567890");
+
+        cuenta.depositar(-200.0);
+        assertEquals(1000.0, cuenta.getSaldo());
+    }
+
+    @Test
+    void testCuentaDepositarMontoPositivo() {
+
+        Usuario usuario = new Usuario("Test User", "12345");
+        Cuenta cuenta = new Cuenta(usuario, 1000.0, "1234567890");
+
+        cuenta.depositar(300.0);
+        assertEquals(1300.0, cuenta.getSaldo());
+    }
 }
