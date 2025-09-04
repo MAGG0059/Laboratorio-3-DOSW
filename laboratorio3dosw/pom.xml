@@ -20,6 +20,13 @@
 <maven.compiler.release>17</maven.compiler.release>
 <junit.version>5.10.2</junit.version>
 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<sonar.projectKey>tibrary</sonar.projectKey>
+<sonar.projectName>tibrary</sonar.projectName>
+<sonar.host.url>http://localhost:9000</sonar.host.url>
+<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+<sonar.coverage.exclusions>src/**/configurators/**</sonar.coverage.exclusions>
+<jacoco.version>0.8.13</jacoco.version>
+
 </properties>
 <dependencies>
 
@@ -99,6 +106,11 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
             </plugin>
         </plugins>
     </build>
