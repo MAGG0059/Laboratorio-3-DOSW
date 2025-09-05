@@ -140,6 +140,9 @@ reporte con JaCoCo, se comprobó la  integración de herramientas de calidad en 
 ![img_5.png](img_5.png)
 ![img_6.png](img_6.png)
 
+### informe sonaqube falto 0.1 que no encontramos
+![img_final.png](img_final.png)
+
 
 ### Reflexion importancia de las pruebas en un software diseñado
 Daniel: Las pruebas son de gran importancia ya que al estar diseñando un software, se debe tener una norma
