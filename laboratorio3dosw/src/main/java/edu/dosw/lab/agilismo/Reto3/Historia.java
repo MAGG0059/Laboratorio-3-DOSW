@@ -1,6 +1,6 @@
 package edu.dosw.lab.agilismo.Reto3;
 
-class Historia {
+public class Historia {
     private String nombre;
     private int puntajeFinal = -1;
 
