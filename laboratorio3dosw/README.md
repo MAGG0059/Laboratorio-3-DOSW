@@ -54,7 +54,7 @@ garantizando así la escalabilidad, mantenibilidad y seguridad del software.
 ### Reto 3
 ![img.png](docs/imagenes/img.png)
 
-![img_1.png](docs/imagenes/img_1.png)
+![img.png](docs/imagenes/img222.png)
 
 En la sesión se registraron cuatro historias: crear cuentas, consultar saldo, validar cuentas y permitir 
 transacciones. Hubo consenso inmediato en crear cuentas (5) y validar cuentas (3). En consultar saldo se 
@@ -63,6 +63,17 @@ entre 5 y 8 llegando finalmente a 8.
 
 
 ### Reto 4 
+![img.png](docs/imagenes/img21.png)
+
+![img_1.png](docs/imagenes/img_22.png)
+
+![img_2.png](docs/imagenes/img_23.png)
+
+![img_4.png](docs/imagenes/img_25.png)
+
+![img_5.png](docs/imagenes/img_26.png)
+
+![img_6.png](docs/imagenes/img_27.png)
 
 ### Principios y Patrones Utilizados
 
@@ -84,15 +95,21 @@ entre 5 y 8 llegando finalmente a 8.
 
 ### Reto 5
 
-![img_2.png](docs/imagenes/img_2.png)
+![img.png](docs/imagenes/img333.png)
 
 ![img_3.png](docs/imagenes/img_3.png)
+
+
 ![img_4.png](docs/imagenes/img_4.png)
 Se añadieron pruebas para cubrir condiciones alternas y ramas poco usadas en reto4, logrando 
 superar el 85% de cobertura, asegurando asi tanto los casos comunes como los excepcionales estén verificados.
 Ademas la cobertura de instrucciones fue de 38% y la de ramas de 33%.
 
-
+Para mejorar la cobertura fue necesario incluir pruebas de escenarios negativos y casos límite.
+Por ejemplo, depósitos de montos negativos o cero, validación de cuentas con longitud incorrecta 
+o saldo negativo, búsqueda de cuentas inexistentes y manejo de valores nulos o vacios. Estos casos fueron importantes 
+ya que nos permitieron cubrir ciertos casos que son vitales para la coherencia del programa y ademas
+al usar mayor parte del codigo, hay un mayor cubrimiento.
 ### Reto 6
 
 
