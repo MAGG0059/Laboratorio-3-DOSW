@@ -36,8 +36,7 @@
 
 ### Reto 2
 ### Diagrama de contexto
-![img.png](docs/uml/diagramaContexto.png)
-
+![diagramaContexto.png](docs/UML/diagramaContexto.png)
 Tanto los clientes como bancos se apoyan en la aplicación según sus necesidades: los usuarios para
 realizar operaciones básicas como consultar saldo o hacer transacciones, y los bancos para validar cuentas
 y responder consultas en tiempo real. Así, Bankify se convierte en el punto de conexión que facilita y
@@ -50,13 +49,12 @@ mientras que las empresas priorizan seguridad y confianza (validar cuentas, perm
 controlada).
 
 ### Diagrama casos de uso
-![img.jpeg](docs/uml/casos_de_uso.png.jpeg)
-
+![casos_de_uso.png.jpeg](docs/UML/casos_de_uso.png.jpeg)
 El cliente interactúa con opciones directas, mientras que Bankify se encarga de procesos 
 más internos, relacionados con la validación y administración de cuentas.
 
 ### Diagrama de clases
-![img.png](docs/uml/diagramaClases.png)
+![diagramaClases.png](docs/UML/diagramaClases.png)
 
 Se colocaron los actores como Usuario, Cuenta, Banco y ademas sus clases que gestionan sus comportamientos
 como AccountManager, AccountV, Bankify, de tal forma que se pueda cumplir con requisitos de negocio
