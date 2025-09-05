@@ -141,7 +141,7 @@ reporte con JaCoCo, se comprobó la  integración de herramientas de calidad en 
 ![img_6.png](img_6.png)
 
 ### informe sonaqube falto 0.1 que no encontramos
-![img_final.png](img_final.png)
+![img_final.png](img_final.jpeg)
 
 
 ### Reflexion importancia de las pruebas en un software diseñado
