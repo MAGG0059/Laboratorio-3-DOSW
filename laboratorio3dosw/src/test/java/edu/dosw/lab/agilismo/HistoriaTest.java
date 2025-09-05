@@ -7,16 +7,21 @@ import edu.dosw.lab.agilismo.Reto3.Historia;
 
 public class HistoriaTest {
 
-    @Test
-    void testCrearHistoria() {
-        Historia h = new Historia("Login de usuario");
-        assertEquals("Login de usuario", h.getNombre());
-        assertEquals(-1, h.getPuntajeFinal(), "El puntaje inicial debe ser -1");
+        @Test
+    void testGetNombre() {
+        Historia h = new Historia("Login");
+        assertEquals("Login", h.getNombre());
     }
 
     @Test
-    void testSetPuntajeFinal() {
-        Historia h = new Historia("Carrito de compras");
+    void testGetPuntajeFinal() {
+        Historia h = new Historia("Carrito");
+        assertEquals(-1, h.getPuntajeFinal(), "Debe iniciar con -1");
+    }
+
+    @Test
+    void SetPuntaje() {
+        Historia h = new Historia("Checkout");
         h.setPuntajeFinal(8);
         assertEquals(8, h.getPuntajeFinal());
     }

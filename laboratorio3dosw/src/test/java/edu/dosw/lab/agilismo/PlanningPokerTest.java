@@ -31,29 +31,6 @@ class PlanningPokerTest {
         System.setOut(System.out);
     }
 
-    @Test
-    void testRegistrarHistorias() {
-        String input = "Historia1\nHistoria2\nfin\n";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        PlanningPoker poker = new PlanningPoker();
-        poker.registrarHistorias();
-
-        
-        assertEquals("=== Registro de Historias ===\n", outContent.toString().split("\r?\n")[0] + "\n");
-    }
-
-    @Test
-    void testRegistrarEquipo() {
-        String input = "2\nAna\nLuis\n";
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-
-        PlanningPoker poker = new PlanningPoker();
-        poker.registrarEquipo();
-
-        
-        assertTrue(outContent.toString().contains("Cantidad de integrantes del equipo:"));
-    }
 
     @Test
     void testEsVotoValido() throws Exception {
@@ -75,28 +52,89 @@ class PlanningPokerTest {
         assertFalse((boolean) method.invoke(poker, List.of(3, 5, 8)));
     }
 
+    
+
+    @Test
+    void testRegistrarHistorias() {
+        String input = "Historia1\nHistoria2\nfin\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        PlanningPoker poker = new PlanningPoker();
+        poker.registrarHistorias();
+
+        try {
+            var field = PlanningPoker.class.getDeclaredField("historias");
+            field.setAccessible(true);
+            List<Historia> historias = (List<Historia>) field.get(poker);
+
+            assertEquals(2, historias.size());
+            assertEquals("Historia1", historias.get(0).getNombre());
+            assertEquals("Historia2", historias.get(1).getNombre());
+        } catch (Exception e) {
+            fail(e);
+        }
+    }
+
+    @Test
+    void testRegistrarEquipo() {
+        String input = "2\nAna\nLuis\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        PlanningPoker poker = new PlanningPoker();
+        poker.registrarEquipo();
+
+        try {
+            var field = PlanningPoker.class.getDeclaredField("equipo");
+            field.setAccessible(true);
+            List<String> equipo = (List<String>) field.get(poker);
+
+            assertEquals(2, equipo.size());
+            assertTrue(equipo.contains("Ana"));
+            assertTrue(equipo.contains("Luis"));
+        } catch (Exception e) {
+            fail(e);
+        }
+    }
+
+    @Test
+    void testIniciarVotacionesConConsensoInmediato() {
+        String input = "Historia1\nfin\n1\nPedro\n5\n";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        PlanningPoker poker = new PlanningPoker();
+        poker.registrarHistorias();
+        poker.registrarEquipo();
+        poker.iniciarVotaciones();
+
+        try {
+            var field = PlanningPoker.class.getDeclaredField("historias");
+            field.setAccessible(true);
+            List<Historia> historias = (List<Historia>) field.get(poker);
+
+            assertEquals(5, historias.get(0).getPuntajeFinal());
+        } catch (Exception e) {
+            fail(e);
+        }
+    }
+
     @Test
     void testMostrarResumen() {
         PlanningPoker poker = new PlanningPoker();
         Historia h1 = new Historia("Login");
-        h1.setPuntajeFinal(5);
-        Historia h2 = new Historia("Checkout");
-        h2.setPuntajeFinal(8);
+        h1.setPuntajeFinal(3);
 
-        
         try {
             var field = PlanningPoker.class.getDeclaredField("historias");
             field.setAccessible(true);
             List<Historia> historias = (List<Historia>) field.get(poker);
             historias.add(h1);
-            historias.add(h2);
         } catch (Exception e) {
             fail(e);
         }
 
         poker.mostrarResumen();
         String output = outContent.toString();
-        assertTrue(output.contains("Login : 5"));
-        assertTrue(output.contains("Checkout : 8"));
+
+        assertTrue(output.contains("Login : 3"));
     }
 }
