@@ -124,8 +124,18 @@ Por ejemplo, depósitos de montos negativos o cero, validación de cuentas con l
 o saldo negativo, búsqueda de cuentas inexistentes y manejo de valores nulos o vacios. Estos casos fueron importantes 
 ya que nos permitieron cubrir ciertos casos que son vitales para la coherencia del programa y ademas
 al usar mayor parte del codigo, hay un mayor cubrimiento.
+
+![img_4.png](img_4.png)
+
 ### Reto 6
 
+Se aplica el uso de sonarqube 
+![img.png](img.png)
+
+Se crea la contraseña nueva, se aplica en el proyecto maven.
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
 
 ### Reflexion importancia de las pruebas en un software diseñado
@@ -134,5 +144,7 @@ la cual guie el sentido del proyecto, donde se especifique la estructura que deb
 se van desarrollando cada parte del proyecto, ademas el realizarlas tempranamente previene el realizar cambios
 gigantescos en el futuro, evitando asi sobrecostes en el cumplimiento del software.
 
----
+Carolina: Es importante hacer pruebas porque así podemos verificar que el software funciona como debería y no tiene errores
+graves. Si no probamos, los usuarios pueden encontrar fallas que dañen su experiencia o incluso hagan que el sistema
+falle en un momento importante.
 
